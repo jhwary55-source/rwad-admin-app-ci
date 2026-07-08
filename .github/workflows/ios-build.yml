@@ -1,4 +1,4 @@
-name: iOS Build (unsigned check)
+name: iOS Build (unsigned ipa for jailbreak)
 
 on:
   workflow_dispatch:
@@ -17,9 +17,15 @@ jobs:
 
       - run: flutter pub get
 
-      - run: flutter build ipa --no-codesign
+      - run: flutter build ios --release --no-codesign
+
+      - name: Package unsigned IPA
+        run: |
+          mkdir -p Payload
+          cp -r build/ios/iphoneos/Runner.app Payload/
+          zip -r Runner.ipa Payload
 
       - uses: actions/upload-artifact@v4
         with:
-          name: ios-archive
-          path: build/ios/archive/Runner.xcarchive
+          name: unsigned-ipa
+          path: Runner.ipa
