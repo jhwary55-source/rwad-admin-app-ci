@@ -1,0 +1,62 @@
+name: rwad_admin_app
+description: "تطبيق رواد الأنظمة - بوابة العملاء والموظفين (Android / iOS / Windows)"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.12.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # State management & navigation
+  flutter_riverpod: ^2.6.1
+  go_router: ^14.8.1
+
+  # Backend (same Supabase project as the website)
+  supabase_flutter: ^2.9.1
+
+  # Charts for the analytics screen
+  fl_chart: ^0.70.2
+
+  # الاتصال: WebRTC أصلي بالكامل (بدون WebView) — إشارة الاتصال (signaling)
+  # عبر قناة Supabase Realtime بث بدل خادم PeerJS الخارجي
+  flutter_webrtc: ^1.5.2
+  permission_handler: ^11.3.1
+
+  # UI / RTL / Arabic
+  google_fonts: ^6.2.1
+  intl: ^0.20.2
+  url_launcher: ^6.3.1
+
+  # نداء Netlify Function الخلفية لميزة المحامي الذكي
+  http: ^1.2.2
+
+  # حفظ تفضيلات التطبيق (الثيم/اللغة/حجم الخط) محليًا
+  shared_preferences: ^2.3.3
+
+  # اختيار صورة من المعرض لتغيير صورة الحساب
+  image_picker: ^1.1.2
+
+  # إشعارات الدفع (Push) — أندرويد/iOS فقط، لا دعم لها بويندوز
+  firebase_core: ^3.8.0
+  firebase_messaging: ^15.1.6
+  flutter_local_notifications: ^18.0.1
+
+  # شاشة "اتصال وارد" حقيقية (رنين + قبول/رفض) بدل إشعار عادي — أندرويد/iOS
+  # فقط (لا دعم لها بويندوز، الذي يبقى يعتمد على الإشعار العادي كما كان)
+  flutter_callkit_incoming: ^3.1.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
