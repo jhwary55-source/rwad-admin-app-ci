@@ -26,6 +26,6 @@ class Env {
   /// فقط تمنع الاستدعاء العشوائي المباشر لدالة ai-intake.
   static const apiSecret = String.fromEnvironment(
     'API_SECRET',
-    defaultValue: 'rwad-secret-2025-change-me',
+    defaultValue: '',
   );
 }
